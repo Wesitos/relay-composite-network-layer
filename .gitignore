@@ -1,5 +1,4 @@
 node_modules
-/lib/
 schema.json
 config.json
 schema.graphql
