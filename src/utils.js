@@ -105,6 +105,12 @@ export const update = (obj, field, defaultValue, updater) => {
     defaultValue = undefined;
   }
 
+  if(Array.isArray(obj)){
+    const newArray = obj.slice();
+    newArray[field] = updater(obj[field] || defaultValue);
+    return newArray;
+  }
+
   return {
     ...obj,
     [field]: updater(obj[field] || defaultValue)
